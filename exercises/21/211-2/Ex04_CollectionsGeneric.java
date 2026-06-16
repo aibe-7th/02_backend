@@ -27,15 +27,15 @@ public class Ex04_CollectionsGeneric {
         // 제네릭으로 Key는 String, Value는 Integer로 고정
         HashMap<String, Integer> studentScores = new HashMap<>();
         
-        studentScores.put("홍길동", 90);
-        studentScores.put("이순신", 100);
-        studentScores.put("홍길동", 95); // 동일한 Key에 값을 다시 넣으면 덮어쓰기(Update) 동작
+        studentScores.put("장원영", 90);
+        studentScores.put("안유진", 100);
+        studentScores.put("장원영", 95); // 동일한 Key에 값을 다시 넣으면 덮어쓰기(Update) 동작
         
-        System.out.println("홍길동의 점수: " + studentScores.get("홍길동")); // 95
-        System.out.println("김철수라는 키가 존재하는지 여부: " + studentScores.containsKey("김철수")); // false
+        System.out.println("장원영의 점수: " + studentScores.get("장원영")); // 95
+        System.out.println("카리나라는 키가 존재하는지 여부: " + studentScores.containsKey("카리나")); // false
         
-        studentScores.remove("이순신");
-        System.out.println("이순신 삭제 후 전체 Map 크기: " + studentScores.size());
+        studentScores.remove("안유진");
+        System.out.println("안유진 삭제 후 전체 Map 크기: " + studentScores.size());
 
         // 3. Set 계열 - HashSet (중복 제거 집합)
         System.out.println("\n--- 3. HashSet (중복 제거 집합) ---");

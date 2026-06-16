@@ -13,7 +13,7 @@ public class Ex01_NamingAndOutput {
     public static void main(String[] args) {
         // 변수 표기법: 카멜 케이스 (camelCase)
         int userAge = 25;
-        String userName = "홍길동";
+        String userName = "민지";
 
         // 1. 표준 출력
         System.out.println("--- 1. 표준 출력 ---");
