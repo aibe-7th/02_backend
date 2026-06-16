@@ -1,7 +1,7 @@
 /**
  * 자바의 변수 타입(원시 타입과 참조 타입), 메모리 구조, 그리고 형변환(Casting)을 다룹니다.
  */
-public class VariablesAndTypes {
+public class Ex02_VariablesAndTypes {
     public static void main(String[] args) {
         // 1. 원시 타입 (Primitive Type) - 스택 영역에 직접 값 저장
         System.out.println("--- 1. 원시 타입과 접미사 ---");

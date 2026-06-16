@@ -5,7 +5,7 @@
  * @author AIBE 7th Backend Agent
  * @version 1.0
  */
-public class NamingAndOutput {
+public class Ex01_NamingAndOutput {
 
     // 상수 표기법: 대문자 스네이크 케이스 (UPPER_SNAKE_CASE)
     public static final int MAX_USERS = 100;

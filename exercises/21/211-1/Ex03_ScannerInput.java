@@ -3,7 +3,7 @@ import java.util.Scanner;
 /**
  * Scanner를 이용한 표준 입력과 next() vs nextLine()의 버퍼 오류 현상을 실습합니다.
  */
-public class ScannerInput {
+public class Ex03_ScannerInput {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
 

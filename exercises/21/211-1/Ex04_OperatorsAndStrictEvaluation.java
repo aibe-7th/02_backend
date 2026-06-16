@@ -1,7 +1,7 @@
 /**
  * 자바의 핵심 연산자(단축 평가, 문자열 동등성 비교, Strict Boolean, instanceof, 비트마스크)를 다룹니다.
  */
-public class OperatorsAndStrictEvaluation {
+public class Ex04_OperatorsAndStrictEvaluation {
     public static void main(String[] args) {
         // 1. 문자열 연결 연산자
         System.out.println("--- 1. 문자열 연결 ---");
