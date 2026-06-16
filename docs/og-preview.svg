@@ -1,0 +1,40 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630" width="1200" height="630">
+  <defs>
+    <!-- 배경 그라데이션 -->
+    <linearGradient id="bg-grad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0f172a" />
+      <stop offset="100%" stop-color="#1e1b4b" />
+    </linearGradient>
+    <!-- 텍스트 그라데이션 -->
+    <linearGradient id="text-grad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#38bdf8" />
+      <stop offset="100%" stop-color="#818cf8" />
+    </linearGradient>
+  </defs>
+
+  <!-- 배경 -->
+  <rect width="1200" height="630" fill="url(#bg-grad)" />
+
+  <!-- 디자인 요소: 테두리 격자선 및 장식 선 -->
+  <rect x="30" y="30" width="1140" height="570" fill="none" stroke="#334155" stroke-width="2" rx="15" />
+  <line x1="80" y1="315" x2="1120" y2="315" stroke="#1e293b" stroke-width="1" />
+
+  <!-- 아이콘 데코 -->
+  <circle cx="80" cy="80" r="12" fill="#38bdf8" opacity="0.8" />
+  <circle cx="112" cy="80" r="12" fill="#818cf8" opacity="0.8" />
+  
+  <!-- 메인 타이틀 -->
+  <text x="600" y="290" font-family="'Inter', 'Outfit', 'Noto Sans KR', sans-serif" font-size="64" font-weight="800" fill="url(#text-grad)" text-anchor="middle" letter-spacing="-1">
+    자바 백엔드 개발 학습 자료
+  </text>
+
+  <!-- 서브 타이틀 -->
+  <text x="600" y="380" font-family="'Inter', 'Outfit', 'Noto Sans KR', sans-serif" font-size="28" font-weight="500" fill="#94a3b8" text-anchor="middle" letter-spacing="2">
+    AIBE 7th Backend Study Materials
+  </text>
+
+  <!-- 하단 푸터 데코 -->
+  <text x="600" y="520" font-family="'Inter', 'Outfit', 'Noto Sans KR', sans-serif" font-size="18" font-weight="600" fill="#475569" text-anchor="middle" letter-spacing="1">
+    Java · Spring · Git
+  </text>
+</svg>
