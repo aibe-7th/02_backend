@@ -4,7 +4,6 @@ import java.sql.Date;
 
 /**
  * 1단계: 패키지, import, static import
- * 권장 시간: 15분
  *
  * 학습 포인트
  * - package는 클래스의 소속을 나타내며 같은 이름의 클래스를 구분하는 네임스페이스입니다.
