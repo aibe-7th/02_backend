@@ -45,6 +45,19 @@
 
 </details>
 
+<details>
+<summary>22. 자바 객체지향 프로그래밍</summary>
+
+<br>
+
+![Java](https://img.shields.io/badge/Java-007396?style=flat-square&logo=openjdk&logoColor=white)
+
+| 차시 | 주제 | 슬라이드 | 실습 |
+| --- | --- | --- | --- |
+| 221-1 | 객체와 클래스 | [PDF](<slides/22/221-1_객체와 클래스.pdf>) | [exercises/22/221-1/](exercises/22/221-1/) |
+
+</details>
+
 ## 폴더 규칙
 
 - `slides/{차시코드 앞 2자리}`: 해당 분류의 강의 자료
