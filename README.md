@@ -58,6 +58,7 @@
 | 221-2 | 추상화와 다형성 I | [PDF](<slides/22/221-2_추상화와 다형성 I.pdf>) | [exercises/22/221-2/](exercises/22/221-2/) |
 | 221-3 | 추상화와 다형성 II | [PDF](<slides/22/221-3_추상화와 다형성 II.pdf>) | [exercises/22/221-3/](exercises/22/221-3/) |
 | 221-4 | Java OOP 구현 | [PDF](<slides/22/221-4_Java OOP 구현.pdf>) | - |
+| 222-1 | Java 예외 처리 | [PDF](<slides/22/222-1_Java 예외 처리.pdf>) | [exercises/22/222-1/](exercises/22/222-1/) |
 
 </details>
 
