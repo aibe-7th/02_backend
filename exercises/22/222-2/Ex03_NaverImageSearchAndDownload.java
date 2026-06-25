@@ -7,8 +7,6 @@ import java.net.http.HttpResponse;
 import java.nio.charset.StandardCharsets;
 import java.nio.file.Path;
 import java.nio.file.Paths;
-import java.util.regex.Matcher;
-import java.util.regex.Pattern;
 
 /**
  * 실습 222-2. 3단계: OpenAPI 연동 및 바이너리 HTTP 파일 다운로드
@@ -21,9 +19,9 @@ import java.util.regex.Pattern;
  * 3. BodyHandlers.ofFile
  *    - HTTP 응답 바이트를 자바 메모리로 전부 로딩하지 않고, 지정한 로컬 파일 경로(Path)로 
  *      스트림 형태로 디렉트 출력(저장)하여 대용량 이미지 다운로드 시 메모리 낭비를 원천 차단합니다.
- * 4. JSON 정규표현식 파싱
- *    - 학습 목적으로 JSON 파싱 라이브러리(Jackson, Gson) 대신 순수 자바 정규표현식(Pattern, Matcher)을 이용해 
- *      "link": "https://..." 패턴을 매칭하여 이미지 URL을 편리하게 추출합니다.
+ * 4. 문자열 조작 기반 파싱 (정규식 배제)
+ *    - 학습 목적으로 JSON 파싱 라이브러리(Jackson, Gson)나 복잡한 정규식(Pattern/Matcher)을 사용하지 않고,
+ *      String의 indexOf()와 substring() 같은 기본적인 문자열 메서드만을 활용해 이미지 URL을 추출합니다.
  */
 public class Ex03_NaverImageSearchAndDownload {
 
@@ -111,20 +109,33 @@ public class Ex03_NaverImageSearchAndDownload {
     }
 
     /**
-     * 정규표현식을 이용하여 JSON 문자열에서 첫 번째 "link" 키의 이미지 URL을 추출합니다.
+     * 문자열 함수(indexOf, substring)를 이용하여 JSON 문자열에서 첫 번째 "link" 키의 이미지 URL을 추출합니다.
      */
     private static String extractFirstImageUrl(String json) {
-        // "link": "이미지URL" 형태를 캡처하는 정규식 작성
-        // JSON 이스케이프 문자(\/) 및 큰따옴표 내 문자열 매칭
-        Pattern pattern = Pattern.compile("\"link\"\\s*:\\s*\"([^\"]+)\"");
-        Matcher matcher = pattern.matcher(json);
-
-        if (matcher.find()) {
-            String url = matcher.group(1);
-            // JSON 내 이스케이프된 슬래시(\/)를 정상적인 슬래시(/)로 가공하여 리턴
-            return url.replace("\\/", "/");
+        // "link" 라는 키의 위치를 찾습니다.
+        int linkIndex = json.indexOf("\"link\"");
+        if (linkIndex == -1) {
+            return null;
         }
-        return null;
+
+        // "link" 값의 시작부분인 큰따옴표(") 위치를 찾습니다.
+        // "\"link\"" 단어 길이(6글자) 이후에 나오는 첫 번째 큰따옴표의 위치
+        int startQuote = json.indexOf("\"", linkIndex + 6);
+        if (startQuote == -1) {
+            return null;
+        }
+
+        // 시작 큰따옴표 바로 다음에 위치하는 값의 닫는 큰따옴표(") 위치를 찾습니다.
+        int endQuote = json.indexOf("\"", startQuote + 1);
+        if (endQuote == -1) {
+            return null;
+        }
+
+        // 큰따옴표 내부의 순수 URL 문자열만 잘라냅니다.
+        String url = json.substring(startQuote + 1, endQuote);
+
+        // JSON 내 이스케이프된 슬래시(\/)를 정상적인 슬래시(/)로 치환하여 리턴합니다.
+        return url.replace("\\/", "/");
     }
 
     /**
