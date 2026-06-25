@@ -27,10 +27,10 @@ import java.util.regex.Pattern;
  */
 public class Ex03_NaverImageSearchAndDownload {
 
-    // [중요] 네이버 OpenAPI 개발자 센터에서 등록한 Client ID / Secret을 입력하세요.
-    // 키가 설정되어 있지 않으면 콘솔에 가이드와 함께 테스트용 Mock 이미지 URL로 자동 전환되어 다운로드 기능을 테스트합니다.
-    private static final String CLIENT_ID = "YOUR_CLIENT_ID";
-    private static final String CLIENT_SECRET = "YOUR_CLIENT_SECRET";
+    // 시스템 환경변수(System.getenv)를 통해 네이버 OpenAPI Client ID와 Secret 키를 안전하게 주입받습니다.
+    // 터미널 혹은 런타임 환경설정에서 NAVER_CLIENT_ID와 NAVER_CLIENT_SECRET 환경변수를 지정해주어야 합니다.
+    private static final String CLIENT_ID = System.getenv("NAVER_CLIENT_ID");
+    private static final String CLIENT_SECRET = System.getenv("NAVER_CLIENT_SECRET");
 
     // 네이버 OpenAPI 검색 키워드
     private static final String SEARCH_KEYWORD = "귀여운 강아지";
@@ -40,11 +40,12 @@ public class Ex03_NaverImageSearchAndDownload {
     public static void main(String[] args) {
         System.out.println("=== 네이버 이미지 OpenAPI 검색 & 바이너리 다운로드 실습 ===");
 
-        // 1. API 키 설정 여부 검사 및 분기
-        if (CLIENT_ID.equals("YOUR_CLIENT_ID") || CLIENT_SECRET.isEmpty()) {
-            System.out.println("[안내] 네이버 API Client ID/Secret 설정이 완료되지 않았습니다.");
-            System.out.println("-> 가이드: Naver Developers(https://developers.naver.com)에 로그인 후");
-            System.out.println("   [검색] API를 사용하는 애플리케이션을 등록하여 Client ID, Secret을 상수에 넣어주세요.");
+        // 1. API 키 설정 여부 검사 및 분기 (환경변수가 주입되었는지 확인)
+        if (CLIENT_ID == null || CLIENT_SECRET == null || CLIENT_ID.isEmpty() || CLIENT_SECRET.isEmpty()) {
+            System.out.println("[안내] 환경변수 NAVER_CLIENT_ID 또는 NAVER_CLIENT_SECRET 설정이 완료되지 않았습니다.");
+            System.out.println("-> 가이드: 로컬 터미널 혹은 IDE 실행 환경(Run Configuration)에서 아래 환경변수를 등록해주세요.");
+            System.out.println("   export NAVER_CLIENT_ID=\"발급받은ID\"");
+            System.out.println("   export NAVER_CLIENT_SECRET=\"발급받은Secret\"");
             System.out.println("-> 대체 모드: 테스트용 Mock 이미지 주소로 파일 다운로드 실습을 대체 진행합니다.\n");
             
             // Mock 이미지 다운로드 직접 실행
