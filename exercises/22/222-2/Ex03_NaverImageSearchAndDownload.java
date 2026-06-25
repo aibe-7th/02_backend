@@ -7,6 +7,7 @@ import java.net.http.HttpResponse;
 import java.nio.charset.StandardCharsets;
 import java.nio.file.Path;
 import java.nio.file.Paths;
+import java.util.Scanner;
 
 /**
  * 실습 222-2. 3단계: OpenAPI 연동 및 바이너리 HTTP 파일 다운로드
@@ -30,8 +31,8 @@ public class Ex03_NaverImageSearchAndDownload {
     private static final String CLIENT_ID = System.getenv("NAVER_CLIENT_ID");
     private static final String CLIENT_SECRET = System.getenv("NAVER_CLIENT_SECRET");
 
-    // 네이버 OpenAPI 검색 키워드
-    private static final String SEARCH_KEYWORD = "귀여운 강아지";
+    // 기본 이미지 검색 키워드
+    private static final String DEFAULT_SEARCH_KEYWORD = "귀여운 강아지";
     // 저장할 파일 경로
     private static final String DOWNLOAD_PATH = "downloaded_dog.jpg";
 
@@ -52,13 +53,32 @@ public class Ex03_NaverImageSearchAndDownload {
             return;
         }
 
+        // 2. Scanner를 이용해 검색 키워드 콘솔 입력 받기 (try-with-resources 적용)
+        String keyword = DEFAULT_SEARCH_KEYWORD;
+        System.out.println("검색할 이미지 키워드를 입력하세요 (기본값: " + DEFAULT_SEARCH_KEYWORD + "): ");
+        
+        try (Scanner scanner = new Scanner(System.in)) {
+            System.out.print("키워드 입력: ");
+            // 자동 빌드 및 검증 시 입력 만료 대기 방지
+            if (scanner.hasNextLine()) {
+                String input = scanner.nextLine().trim();
+                if (!input.isEmpty()) {
+                    keyword = input;
+                }
+            } else {
+                System.out.println("\n[안내] 입력 스트림이 만료되어 기본 키워드로 검색을 수행합니다.");
+            }
+        }
+        
+        System.out.println("-> '" + keyword + "' 키워드로 이미지 검색을 진행합니다.");
+
         try {
-            // 2. 네이버 이미지 검색 API 호출
-            System.out.println("1. 네이버 이미지 검색 OpenAPI 호출 시도...");
-            String jsonResponse = searchImageFromNaver(SEARCH_KEYWORD);
+            // 3. 네이버 이미지 검색 API 호출
+            System.out.println("\n1. 네이버 이미지 검색 OpenAPI 호출 시도...");
+            String jsonResponse = searchImageFromNaver(keyword);
             System.out.println("-> 검색 API 응답 획득 성공!");
 
-            // 3. 응답 JSON에서 이미지 URL("link") 추출
+            // 4. 응답 JSON에서 이미지 URL("link") 추출
             System.out.println("\n2. JSON 결과에서 첫 번째 이미지의 원본 URL 파싱...");
             String imageUrl = extractFirstImageUrl(jsonResponse);
             if (imageUrl == null) {
@@ -68,7 +88,7 @@ public class Ex03_NaverImageSearchAndDownload {
             }
             System.out.println("-> 파싱된 이미지 URL: " + imageUrl);
 
-            // 4. 추출된 URL에서 바이너리 이미지 다운로드 진행
+            // 5. 추출된 URL에서 바이너리 이미지 다운로드 진행
             System.out.println("\n3. 파싱된 URL로부터 이미지 다운로드 시작...");
             downloadBinaryFile(imageUrl, DOWNLOAD_PATH);
 
