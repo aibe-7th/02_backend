@@ -61,6 +61,7 @@
 | 222-1 | Java 예외 처리 | [PDF](<slides/22/222-1_Java 예외 처리.pdf>) | [exercises/22/222-1/](exercises/22/222-1/) |
 | 222-2 | Java File I/O | [PDF](<slides/22/222-2_Java File I_O.pdf>) | [exercises/22/222-2/](exercises/22/222-2/) |
 | 222-3 | Java Concurrency | [PDF](<slides/22/222-3_Java Concurrency.pdf>) | [exercises/22/222-3/](exercises/22/222-3/) |
+| 222-4 | Java Functional Programming | [PDF](<slides/22/222-4_Java Functional Programming.pdf>) | [exercises/22/222-4/](exercises/22/222-4/) |
 
 </details>
 
