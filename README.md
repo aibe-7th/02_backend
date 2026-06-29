@@ -65,6 +65,21 @@
 
 </details>
 
+<details>
+<summary>23. 자바 웹 애플리케이션 개발</summary>
+
+<br>
+
+![Java](https://img.shields.io/badge/Java-007396?style=flat-square&logo=openjdk&logoColor=white) ![Apache Tomcat](https://img.shields.io/badge/Apache%20Tomcat-F8DC75?style=flat-square&logo=apachetomcat&logoColor=black) ![Apache Maven](https://img.shields.io/badge/Apache%20Maven-C71A36?style=flat-square&logo=apachemaven&logoColor=white)
+
+| 차시 | 주제 | 슬라이드 | 실습 |
+| --- | --- | --- | --- |
+| 231-1 | Maven & Tomcat | [PDF](<slides/23/231-1_Maven & Tomcat.pdf>) | - |
+| 231-2 | Servlet | [PDF](<slides/23/231-2_Servlet.pdf>) | [GitHub](https://github.com/aibe-7th/02_backend_servlet) |
+| 231-3 | JSP | [PDF](<slides/23/231-3_JSP.pdf>) | [GitHub](https://github.com/aibe-7th/02_backend_jsp) |
+
+</details>
+
 ## 폴더 규칙
 
 - `slides/{차시코드 앞 2자리}`: 해당 분류의 강의 자료
