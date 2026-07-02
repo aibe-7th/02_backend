@@ -78,7 +78,7 @@
 | 231-2 | Servlet | [PDF](<slides/23/231-2_Servlet.pdf>) | [GitHub](https://github.com/aibe-7th/02_backend_servlet) |
 | 231-3 | JSP | [PDF](<slides/23/231-3_JSP.pdf>) | [GitHub](https://github.com/aibe-7th/02_backend_jsp) |
 | 232 | 소프트웨어 아키텍처 패턴 | [PDF](<slides/23/232_소프트웨어 아키텍처 패턴.pdf>) | - |
-| 233-1 | 쿠키와 세션 | [PDF](<slides/23/233-1_쿠키와 세션.pdf>) | - |
+| 233-1 | 쿠키와 세션 | [PDF](<slides/23/233-1_쿠키와 세션.pdf>) | [GitHub](https://github.com/aibe-7th/02_backend_cookie-session) |
 
 </details>
 
