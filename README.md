@@ -83,6 +83,20 @@
 
 </details>
 
+<details>
+<summary>24. 스프링 프레임워크</summary>
+
+<br>
+
+![Spring](https://img.shields.io/badge/Spring-6DB33F?style=flat-square&logo=spring&logoColor=white)
+
+| 차시 | 주제 | 슬라이드 | 실습 |
+| --- | --- | --- | --- |
+| 241-1 | Spring Core | [PDF](<slides/24/241-1_Spring Core.pdf>) | [GitHub](https://github.com/aibe-7th/02_backend_spring-core) |
+
+</details>
+
+
 ## 폴더 규칙
 
 - `slides/{차시코드 앞 2자리}`: 해당 분류의 강의 자료
