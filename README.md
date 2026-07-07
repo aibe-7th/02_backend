@@ -94,6 +94,7 @@
 | --- | --- | --- | --- |
 | 241-1 | Spring Core | [PDF](<slides/24/241-1_Spring Core.pdf>) | [GitHub](https://github.com/aibe-7th/02_backend_spring-core) |
 | 241-2 | Spring Web MVC | [PDF](<slides/24/241-2_Spring Web MVC.pdf>) | [GitHub](https://github.com/aibe-7th/02_backend_spring-webmvc) |
+| 241-3 | Spring Boot | [PDF](<slides/24/241-3_Spring Boot.pdf>) | [GitHub](https://github.com/aibe-7th/02_backend_spring-boot) |
 
 </details>
 
